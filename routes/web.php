@@ -14,8 +14,6 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/Posts',[PostController::class, 'index']);
+Route::get('/',function() { return view('welcome');});
+Route::get('/Posts',[PostController::class, 'index']);  //  /postsというURI に、getメソッドで注文が来たらPostControllerのインデックスという
+                                                        //  というメソッドを実行するという意味
