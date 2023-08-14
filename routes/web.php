@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',function() { return view('welcome');});
+Route::get('/Posts',[PostController::class, 'index']);  //  /postsというURI に、getメソッドで注文が来たらPostControllerのインデックスという
+                                                        //  というメソッドを実行するという意味
