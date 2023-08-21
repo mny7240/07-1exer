@@ -17,6 +17,7 @@ use App\Http\Controllers\PostController;
 Route::get('/', [PostController::class, 'index']);  //ちなみに基本的にアプリを起動してブラウザから送られてくる最初のリクエストはこの  /   というURLである。
 Route::get('/posts/create',[PostController::class,'create']);
 Route::get('/posts/{post}',[PostController::class, 'show']);    // /{post}はルートパラメータといい、postのidは選んだ投稿によって変わってしまうため、{post}にする。
+Route::post('/posts',[PostController::class,'store']);    //storeはデータを保存するという意味
 
 // Route･･･laravel 既存機能のRouteファサードを使う
 // get･･･HTTP メソッドを指定
